@@ -1,0 +1,26 @@
+{
+  "name": "react-native-collabsible-view",
+  "version": "1.0.4",
+  "description": "This is the custom collabsible for making the custom FAQ section in your react native project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react native",
+    "collabsible View",
+    "FAQ section"
+  ],
+  "author": "Rohit Barate",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "18.2.0",
+    "react-native": "0.71.4",
+    "react-native-vector-icons": "^9.2.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-vector-icons": "*"
+  }
+}
