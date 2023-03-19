@@ -22,5 +22,13 @@
     "react": "*",
     "react-native": "*",
     "react-native-vector-icons": "*"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohitbarate/react-native-collabsible-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rohitbarate/react-native-collabsible-view/issues"
+  },
+  "homepage": "https://github.com/Rohitbarate/react-native-collabsible-view#readme"
 }
