@@ -1,6 +1,6 @@
 {
   "name": "react-native-collapsibleview",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This is the custom collabsible for making the custom FAQ section in your react native project.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -44,5 +44,4 @@
   "directories": {
     "lib": "lib"
   }
- 
 }
