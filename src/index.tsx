@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 import {StyleSheet, Text, View, TouchableOpacity, Animated} from 'react-native';
 
 type Props = {
@@ -14,10 +14,12 @@ type Props = {
   containerMarginTop?: number;
   containerMarginBottom?: number;
   containerMarginVertical?: number;
+  containerBackgroundColor?: string;
   // title style
   titleWidth?: string;
   titleFontSize?: number;
   titleColor?: string;
+  titleBackgroundColor?: string;
   // icon style
   iconColor?: string;
   iconFontSize?: number;
@@ -25,6 +27,8 @@ type Props = {
   descFontSize?: number;
   descFontWeight?: any;
   descColor?: string;
+  descBackgroundColor?: string;
+  descWidth?: string;
 };
 
 const CollapsibleView = (props: Props) => {
@@ -46,11 +50,15 @@ const CollapsibleView = (props: Props) => {
     titleWidth,
     titleFontSize,
     titleColor,
+    titleBackgroundColor,
     iconColor,
     iconFontSize,
     descFontSize,
     descFontWeight,
     descColor,
+    containerBackgroundColor,
+    descBackgroundColor,
+    descWidth,
   } = props;
 
   const containerStyle = {
@@ -63,21 +71,31 @@ const CollapsibleView = (props: Props) => {
     marginTop: containerMarginTop,
     marginBottom: containerMarginBottom,
     marginVertical: containerMarginVertical || 5,
+    backgroundColor: containerBackgroundColor || '#fff',
+  };
+  const titleContStyle = {
+    width: titleWidth,
+    backgroundColor: titleBackgroundColor,
   };
   const titleStyle = {
-    width: titleWidth || '90%',
     fontSize: titleFontSize || 16,
     color: titleColor || '#fff',
   };
   const iconStyle = {
-    color:iconColor || '#fff',
+    color: iconColor || '#fff',
     fontSize: iconFontSize || 16,
+  };
+
+  const descContStyle = {
+    backgroundColor: descBackgroundColor,
+    width: descWidth || '100%',
   };
   const descStyle = {
     fontSize: descFontSize || 14,
     fontWeight: descFontWeight || '400',
     color: descColor || '#ffffff80',
-  }
+    paddingLeft: 10,
+  };
 
   const iconAnimation = () => {
     Animated.timing(iconRef, {
@@ -90,7 +108,7 @@ const CollapsibleView = (props: Props) => {
   return (
     <View style={containerStyle}>
       <TouchableOpacity onPress={iconAnimation}>
-        <View style={styles.row}>
+        <View style={[titleContStyle,styles.titleView]}>
           <Text style={[titleStyle, {fontWeight: isOpen ? '900' : '400'}]}>
             {title}
           </Text>
@@ -110,17 +128,7 @@ const CollapsibleView = (props: Props) => {
         </View>
       </TouchableOpacity>
       {isOpen && (
-        <Animated.View
-          style={[
-            styles.ansView,
-            // {
-            //   transform: [
-            //     {
-            //       scaleY: iconRef,
-            //     },
-            //   ],
-            // },
-          ]}>
+        <Animated.View style={descContStyle}>
           <Text style={descStyle}>{description}</Text>
         </Animated.View>
       )}
@@ -131,17 +139,12 @@ const CollapsibleView = (props: Props) => {
 export default CollapsibleView;
 
 const styles = StyleSheet.create({
-  row: {
+  titleView: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 5,
+    paddingBottom: 5,
     paddingRight: 5,
-  },
-  ansView: {
-    right: -10,
-    bottom: 0,
-    width: '95%',
   },
 });
