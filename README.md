@@ -1,64 +1,100 @@
 This is the custom collabsible view for making the custom FAQ section or dropdown menu in your react native project. it supports both android and ios operating systems.
 
 # Installation
+
 1. Run: `$ npm install --save react-native-collabsible-view`
 
-2. Run: `$ npm install --save react-native-vector-icons`
+## Screen Shot
 
-3. [`Click here`](https://www.npmjs.com/package/react-native-vector-icons?activeTab=readme) Follow the all steps to use `react-native-vector-icons` package OR follow below steps.
+<!-- <img src="https://raw.githubusercontent.com/sanpyaelin/react-native-collapse-view/master/images/demo.gif" width="200">  -->
 
-## Android
+## Usage
 
-#### Option: With Gradle (recommended)
+Import the component:
+```js
+import CollapsibleView from 'react-native-collabsible-view';
 
-This method has the advantage of fonts being copied from this module at build time so that the fonts and JS are always in sync, making upgrades painless.
+      <CollapsibleView 
+        title={'What is your name?'}
+        description={'Rohit Barate'}
+      />
+  
+```
+## Full Example
 
-1. Edit `android/app/build.gradle` ( NOT `android/build.gradle` ) and add the following:
+```
+import React, { useRef, useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Animated,
+} from "react-native";
 
-```gradle
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+const CollapsibleView = ({title,description}) => {
+
+  return (
+    <View style={styles.container}>
+       <CollapsibleView 
+        title={'What is your name?'}
+        description={'Rohit Barate'}
+      />
+    </View>
+  );
+};
+
+export default CollapsibleView;
+
+const styles = StyleSheet.create({
+  container: {
+    borderTopColor: "#5F5F5F",
+    borderTopWidth: 1,
+    paddingTop: 5,
+    overflow: "hidden",
+    paddingBottom:10,
+    width:'90%',
+  },
+  row: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 5,
+    // elevation:4,
+    // zIndex:100
+  },
+  que: {
+    width: "90%",
+    fontSize: 16,
+    fontWeight: "bold",
+    color:'#fff',
+  },
+  ansView: {
+    // flex: 1,
+    right:0,
+    bottom:0,
+    width:'95%'
+  },
+  ans: {
+    fontSize: 14,
+    fontWeight: "400",
+    color: "#4F4F4F",
+  },
+});
+
 ```
 
-2. Edit `android/settings.gradle` to look like this (without the +):
+## Properties
 
-  ```diff
-  rootProject.name = 'MyApp'
+Prop | Type | Default
+-----|------|---------
+collapse | bool | false 
+tension| number | 10 
+renderView| func |  
+renderCollapseView | func | 
 
-  include ':app'
+## License
 
-  + include ':react-native-vector-icons'
-  + project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
-  ```
-
-3. Edit `android/app/build.gradle` (note: **app** folder) to look like this:
-
-  ```diff
-  apply plugin: 'com.android.application'
-
-  android {
-    ...
-  }
-
-  dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
-
-  + implementation project(':react-native-vector-icons')
-  }
-  ```
-
-- Note: this is `optional step`, it's necessary only and only if your **react-native app doesn't support auto-linking** otherwise you can ignore this.
- 
- [`Click here`](https://www.npmjs.com/package/react-native-vector-icons?activeTab=readme) to read the documentation.
- 
-
-## iOS
-
-If you want to use any of the bundled icons, you need to add the icon fonts to your Xcode project. Just follow these steps:
-
-[`Click here `](https://www.npmjs.com/package/react-native-vector-icons?activeTab=readme#ios) to read documentation.
-
-<br>
-
-_Note: you need to recompile your project after adding new fonts._
+[MIT License](http://opensource.org/licenses/mit-license.html). © 2018 San Pyae Lin

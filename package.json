@@ -1,22 +1,32 @@
 {
-  "name": "react-native-collabsible-view",
+  "name": "react-native-collapsibleview",
   "version": "1.0.7",
   "description": "This is the custom collabsible for making the custom FAQ section in your react native project.",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --project ./tsconfig.json"
   },
   "keywords": [
     "react native",
-    "collabsible View",
-    "FAQ section"
+    "collapsible View",
+    "FAQ section",
+    "react-native-collapsible-view",
+    "animated view",
+    "view"
   ],
   "author": "Rohit Barate",
-  "license": "ISC",
+  "license": "ICS",
   "devDependencies": {
-    "react": "18.2.0",
-    "react-native": "0.71.4",
-    "react-native-vector-icons": "^9.2.0"
+    "@types/react": "^18.0.28",
+    "react": "^18.2.0",
+    "react-native": "^0.71.4",
+    "react-native-vector-icons": "^9.2.0",
+    "typescript": "^5.0.2"
   },
   "peerDependencies": {
     "react": "*",
@@ -30,5 +40,9 @@
   "bugs": {
     "url": "https://github.com/Rohitbarate/react-native-collabsible-view/issues"
   },
-  "homepage": "https://github.com/Rohitbarate/react-native-collabsible-view#readme"
+  "homepage": "https://github.com/Rohitbarate/react-native-collabsible-view#readme",
+  "directories": {
+    "lib": "lib"
+  }
+ 
 }
