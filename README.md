@@ -8,7 +8,7 @@ This is the custom collabsible view for making the custom FAQ section or dropdow
 
 Import the component:
 
-```
+```javascript
 import CollapsibleView from 'react-native-collapsible-view-faq';
 
       <CollapsibleView 
@@ -18,7 +18,7 @@ import CollapsibleView from 'react-native-collapsible-view-faq';
 ```
 ## Full Example
 
-```
+```javascript
 import React, { useRef, useState } from "react";
 import { View } from "react-native";
 import CollapsibleView from 'react-native-collapsible-view-faq';
