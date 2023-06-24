@@ -75,6 +75,10 @@ export default App;
 |descColor|string|'#ffffff80'|
 
 
+## npm Link
+ [npm](https://www.npmjs.com/package/react-native-collapsible-view-faq)
+
+
 
 ## Demo
 
@@ -82,7 +86,8 @@ export default App;
 
 
 
-<!-- 
+ 
+ <!-- 
 ## License
 
 [MIT License](http://opensource.org/licenses/mit-license.html). © 2018 San Pyae Lin -->
